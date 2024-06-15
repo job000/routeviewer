@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "223459600533",
+    "project_id": "routeviewer-eacdc",
+    "storage_bucket": "routeviewer-eacdc.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:223459600533:android:5a177808ebcd79781f139c",
+        "android_client_info": {
+          "package_name": "com.example.myapp"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAD_7fL1mvqtZ4A2H0QcHRdbE0LyAINJH8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
