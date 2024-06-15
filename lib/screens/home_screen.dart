@@ -8,6 +8,7 @@ import '../services/settings_service.dart';
 import 'map_screen.dart';
 import 'settings_screen.dart';
 import '../widgets/route_list.dart';
+import '../models/route.dart';
 
 class HomeScreen extends StatelessWidget {
   @override
@@ -17,29 +18,29 @@ class HomeScreen extends StatelessWidget {
 
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Home'),
+        title: Text('Home'),
         actions: [
           IconButton(
-            icon: const Icon(Icons.settings),
+            icon: Icon(Icons.settings),
             onPressed: () {
               Navigator.push(context, MaterialPageRoute(builder: (context) => SettingsScreen()));
             },
           ),
           IconButton(
-            icon: const Icon(Icons.logout),
+            icon: Icon(Icons.logout),
             onPressed: () {
               authService.signOut();
             },
           ),
         ],
       ),
-      body: StreamProvider(
-        create: (context) => routeService.getUserRoutes(authService.user!.uid),
+      body: StreamProvider<List<MyRoute>>.value(
+        value: routeService.getUserRoutes(authService.user!.uid),
         initialData: [],
         child: RouteList(),
       ),
       floatingActionButton: FloatingActionButton(
-        child: const Icon(Icons.add),
+        child: Icon(Icons.add),
         onPressed: () {
           Navigator.push(context, MaterialPageRoute(builder: (context) => MapScreen()));
         },
