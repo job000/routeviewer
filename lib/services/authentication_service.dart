@@ -9,8 +9,8 @@ class AuthenticationService extends ChangeNotifier {
   bool get isAuthenticated => _user != null;
 
   AuthenticationService() {
-    _auth.authStateChanges().listen((user) {
-      _user = user;
+    _auth.authStateChanges().listen((firebaseUser) {
+      _user = firebaseUser;
       notifyListeners();
     });
   }
